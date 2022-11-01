@@ -1,4 +1,4 @@
-const { collection, getDocs } = require("firebase/firestore");
+const { collection, where, query, getDocs } = require("firebase/firestore");
 const { db } = require("./utils/firebase.js");
 
 const DB_NAME = "links";
@@ -15,11 +15,14 @@ exports.handler = async function(event, ctx) {
   console.log('---> haaaash: ', hash);
 
   try {
-    const querySnapshot = await getDocs(collection(db, DB_NAME));
+    const q = query(collection(db, DB_NAME), where("hash", "==", hash));
+    const querySnapshot = await getDocs(q);
     let link;
-    querySnapshot,forEach((doc) => {
-      if (doc.hash.toLowerCase() ===  hash.toLowerCase()) {
-        link = doc.link;
+    
+    querySnapshot.forEach((doc) => {
+      const data = doc.data(); 
+      if (data.hash.toLowerCase() === hash.toLowerCase()) {
+        link = data.link;
       }
     });
 
