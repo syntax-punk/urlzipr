@@ -37,11 +37,14 @@ exports.handler = async function(event, ctx) {
 
     const body = {
       response: 'Ok',
-      link
+      link: url
     }
 
     return {
       statusCode: 200,
+      headers: {
+        'Content-Type': 'application/json',
+      },
       body: JSON.stringify(body)
     }
   } catch (e) {

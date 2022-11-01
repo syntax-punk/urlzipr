@@ -5,33 +5,33 @@
 	import {clipIt, isValidUrl} from "./helpers" 
 
 	let urlInput = "";
-	$: validUrl = isValidUrl(urlInput);
+	$: validUrl =  isValidUrl(urlInput);
 	$: console.log(" >>> " + urlInput +" >>> validity is: " + validUrl)
 	let shortUrl;
 	let errorMessage;
 
-	const baseUrl = 'https://go.slit.link/';
-
 	const handleSubmit = () => {
 		if (!urlInput) return;
-		const apiUrl = baseUrl + 'generate';
-		const data = {
-			url: urlInput
-		}
-		fetch(apiUrl, {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
-			},
-			body: JSON.stringify(data),
-		})
+		// const apiUrl = baseUrl + 'generate';
+		// const data = {
+		// 	url: urlInput
+		// }
+		// fetch(apiUrl, {
+		// 	method: 'POST',
+		// 	headers: {
+		// 		'Content-Type': 'application/json',
+		// 	},
+		// 	body: JSON.stringify(data),
+		// })
+		const appUrl = `/.netlify/functions/create?link=${urlInput}`
+		fetch(appUrl, {method: 'GET'})
 		.then(response => response.json())
 		.then(data => {
-			console.log('Success:', data);
-			shortUrl = baseUrl + data.id;
+			console.log('-> success:', data);
+			shortUrl = data.link;
 		})
 		.catch((error) => {
-			console.warn('Error:', error);
+			console.warn('!! Error:', error);
 		});
 	}
 
@@ -41,7 +41,7 @@
 	<Header />
 	<section>
 		<div class="text-banner">
-			SLIT.LINK is a blazing fast url shortener. It's totally free and each generated link has a lifetime of 5 days. Enjoy!
+			SLIT.LINK is a blazing fast url shortener. It's totally free and fun to use. Enjoy!
 		</div>
 		<article>
 			<form on:submit|preventDefault={handleSubmit}>
