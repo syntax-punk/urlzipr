@@ -1,7 +1,7 @@
 const { collection, where, query, getDocs } = require("firebase/firestore");
 const { db } = require("./utils/firebase.js");
 
-const DB_NAME = "links";
+const DB_NAME = process.env.DB_NAME;
 
 
 exports.handler = async function(event, ctx) {
@@ -11,8 +11,6 @@ exports.handler = async function(event, ctx) {
 
   const pathParams = event.path.split('/');
   const hash = pathParams.pop();
-
-  console.log('---> haaaash: ', hash);
 
   try {
     const q = query(collection(db, DB_NAME), where("hash", "==", hash));

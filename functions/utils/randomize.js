@@ -9,10 +9,10 @@ function randomize (size, input = chars) {
 
 function generateUrl(hashLen = 6) {
     const hash = randomize(hashLen)
-    const baseUrl = process.env.baseUrl;
+    const baseUrl = process.env.API_BASE_URL;
     return {
         hash,
-        url: `${baseUrl}${hash}`
+        url: baseUrl + hash
     }
 }
 
