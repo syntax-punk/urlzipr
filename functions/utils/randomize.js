@@ -1,8 +1,19 @@
 const chars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-exports.randomize = (size, input = chars) => {
+function randomize (size, input = chars) {
     let result = "";
     for (var i = size; i > 0; --i)
         result += input[Math.floor(Math.random() * input.length)];
     return result;
+};
+
+function generateUrl(hashLen = 6) {
+    const hash = randomize(hashLen)
+    const baseUrl = process.env.baseUrl;
+    return {
+        hash,
+        url: `${baseUrl}${hash}`
+    }
 }
+
+module.exports = { randomize, generateUrl }
