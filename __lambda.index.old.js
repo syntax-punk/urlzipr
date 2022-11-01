@@ -1,5 +1,5 @@
 const AWS = require("aws-sdk");
-const { randomize } = require("../utils/randomize.js");
+const { randomize } = require("./utils/randomize.js");
 
 const documentClient = new AWS.DynamoDB.DocumentClient();
 

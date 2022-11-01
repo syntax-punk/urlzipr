@@ -3,3 +3,6 @@
 
 .DS_Store
 .env
+
+/functions/.env
+/functions/node_modules/
