@@ -1,5 +1,5 @@
 [build]
-  command = "cd functions && npm i"
+  command = "npm run build && cd functions && npm i"
   publish="public"
   functions="functions"
 
@@ -7,6 +7,6 @@
   NODE_VERSION = "16"
 
 [[redirects]]
-    from = "/r"
+    from = "/r/*"
     to = "/.netlify/functions/redir"
     status = 200
