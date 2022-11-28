@@ -15,7 +15,7 @@
 		const body = {
 			link: urlInput
 		}
-		const appUrl = `http://localhost:9999/.netlify/functions/create`
+		const appUrl = `/.netlify/functions/create`
 		fetch(appUrl, {
 			method: 'POST', 
 			body: JSON.stringify(body),
