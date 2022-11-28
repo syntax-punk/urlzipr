@@ -6,13 +6,12 @@ const validUrl = require('valid-url');
 const DB_NAME = process.env.DB_NAME;
 
 exports.handler = async function(event, ctx) {
-  let body;
-  //  check if link is valid
-  const { link } = event.queryStringParameters;
+  let body;  
+  const reqBody = JSON.parse(event.body)
+  const link = reqBody.link;
   const { hash, url } = generateUrl();
   
-  console.log('---> event: ', event)
-  console.log('---> ctx: ', ctx)
+  console.log('---> link: ', link)
   
   try {
     if (!link) {
@@ -43,7 +42,7 @@ exports.handler = async function(event, ctx) {
     return {
       statusCode: 200,
       headers: {
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify(body)
     }

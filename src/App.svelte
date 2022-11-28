@@ -12,26 +12,24 @@
 
 	const handleSubmit = () => {
 		if (!urlInput) return;
-		// const apiUrl = baseUrl + 'generate';
-		// const data = {
-		// 	url: urlInput
-		// }
-		// fetch(apiUrl, {
-		// 	method: 'POST',
-		// 	headers: {
-		// 		'Content-Type': 'application/json',
-		// 	},
-		// 	body: JSON.stringify(data),
-		// })
-		const appUrl = `/.netlify/functions/create?link=${urlInput}`
-		fetch(appUrl, {method: 'GET'})
+		const body = {
+			link: urlInput
+		}
+		const appUrl = `http://localhost:9999/.netlify/functions/create`
+		fetch(appUrl, {
+			method: 'POST', 
+			body: JSON.stringify(body),
+			headers: {
+				'Content-Type': 'application/json',
+			},
+		})
 		.then(response => response.json())
 		.then(data => {
 			console.log('-> success:', data);
 			shortUrl = data.link;
 		})
 		.catch((error) => {
-			console.warn('!! Error:', error);
+			console.warn('!!! Error:', error);
 		});
 	}
 
