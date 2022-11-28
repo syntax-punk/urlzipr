@@ -28,23 +28,23 @@ main {
 	grid-template-rows: auto 1fr auto;
 	padding: 2rem;
 	width: 100%;
-	color: #F5F7F9;
-	background-image: linear-gradient(to top, #86377b 20%, #27273c 80%);
+	color: #000000;
+	background-color: #ffffff;
+	border: 24px solid #000000;
 }
 
 section {
 	width: 100%;
 	max-width: 100rem;
-	min-width: 60rem;
+	min-width: 30rem;
 	justify-self: center;
 	padding: 2rem;
 	z-index: 20;
 }
 
 .text-banner {
-	text-align: justify;
+	text-align: center;
 	margin: 2rem auto;
-	max-width: 44rem;
 	font-weight: 300;
 	letter-spacing: 0.1rem;
 	word-spacing: 0.2rem;
@@ -76,10 +76,10 @@ form {
 
 header, footer {
 	display: grid;
-	align-items: center;
-	height: 8rem;
+	place-items: center;
+	height: auto;
 	width: 100%;
-	color: #f7f7f9;
+	color: #1a1a1a;
 	z-index: 2;
 }
 
@@ -117,14 +117,15 @@ input:disabled {
 
 button {
 	color: #F5F7F9;
-	background-image: linear-gradient(to bottom, #af0598 40%, #791a6c 60%);
+	background-color: #000000;
+	border: 2px solid #32a5f1;
 	cursor: pointer;
 	outline: none;
 }
 
 button:disabled {
 	background-color: #ddd;
-	background-image: none;
+	border: none;
 	color: #999;
 }
 

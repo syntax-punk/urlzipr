@@ -1,12 +1,42 @@
 <header>
-	<h2>SLIT</h2>
+	<div class="slit-banner"></div>
 </header>
 
 <style>
-	h2 {
-		font-family: Montserrat, sans-serif;
-		letter-spacing: 0.8rem;
-		font-weight: 300;	
-		font-size: 8rem;
+	.slit-banner {
+		height: 60rem;
+		width: 60rem;
+		background-image: url('/assets/slit_banner.png');
+		background-repeat: no-repeat;
+		background-size: cover;
 	}
+
+	@media (max-width: 1200px) {
+		.slit-banner {
+			height: 50rem;
+			width: 50rem;
+		}
+	}
+
+	@media (max-width: 900px) {
+		.slit-banner {
+			height: 40rem;
+			width: 40rem;
+		}
+	}
+
+	@media (max-width: 520px) {
+		.slit-banner {
+			height: 20rem;
+			width: 20rem;
+		}
+	}
+
+	@media (max-width: 320px) {
+		.slit-banner {
+			height: 12rem;
+			width: 12rem;
+		}
+	}
+
 </style>

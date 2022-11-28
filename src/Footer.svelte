@@ -1,5 +1,5 @@
 <footer>
-	<span>by <a href="https://twitter.com/theVoogie">@theVoogie</a></span>
+	<span>by <a href="https://twitter.com/theVoogie">@theVoogie 👀</a></span>
 </footer>
 
 <style>

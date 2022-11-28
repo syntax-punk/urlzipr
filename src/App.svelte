@@ -1,7 +1,6 @@
 <script>
 	import Header from './Header.svelte'
 	import Footer from './Footer.svelte'
-	import Waves from './Waves.svelte'
 	import {clipIt, isValidUrl} from "./helpers" 
 
 	let urlInput = "";
@@ -16,7 +15,7 @@
 			link: urlInput
 		}
 		const appUrl = `/.netlify/functions/create`
-		fetch(appUrl, {
+		fetch(appUrl, {	
 			method: 'POST', 
 			body: JSON.stringify(body),
 			headers: {
@@ -39,13 +38,13 @@
 	<Header />
 	<section>
 		<div class="text-banner">
-			SLIT.LINK is a blazing fast url shortener. It's totally free and fun to use. Enjoy!
+			Tired of long and confusing urls? Slit 'em!
 		</div>
 		<article>
 			<form on:submit|preventDefault={handleSubmit}>
 				<input class="basic-input" bind:value={urlInput}>
 				<button disabled={!validUrl || !urlInput } type=submit>
-					SLIT
+					SLIT 🔪
 				</button>
 			</form>
 			{#if shortUrl}
@@ -68,7 +67,6 @@
 	</section>
 	<Footer />
 </main>
-<Waves />
 
 <style>
 	.central-container {
@@ -76,13 +74,13 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
+		color: #0d0d0d;
 	}
 	#shortened {
 		margin: 0 auto;
 		text-align: center;
 		padding: 1rem;
 		width: 100%;
-		color: #f7f7f7;
 		font-size: 2.4em;
 		font-weight: 300;
 		background-color: transparent;
@@ -107,7 +105,7 @@
 		width: 6rem;
 		height: 6rem;
 		border-radius: 50%;
-		background-color: #a97ca48a;
+		background-color: #61a4fc8a;
 		border: 1px solid #3333338A;
 		transition: transform 180ms ease-in-out;
 	}
@@ -123,13 +121,13 @@
 	.copy-frame:first-child {
 		bottom: 0.8rem;
 		right: 1.2rem;
-		background-color: #a97ca48a;
+		background-color: #256af58a;
 		border: 2px solid #121212df;
 	}
 	.copy-frame:last-child {
 		top: 0.8rem;
 		left: 1.2rem;
-		background-color: #a97ca4;
+		background-color: #32a5f1;
 		border: 2px solid #121212dc;
 	}
 
