@@ -105,8 +105,8 @@
 		width: 6rem;
 		height: 6rem;
 		border-radius: 50%;
-		background-color: #61a4fc8a;
-		border: 1px solid #3333338A;
+		background-color: #e0e0e0;
+		box-shadow: 0 0 4px 2px #333333;
 		transition: transform 180ms ease-in-out;
 	}
 	.copy-icon:active {
@@ -121,13 +121,13 @@
 	.copy-frame:first-child {
 		bottom: 0.8rem;
 		right: 1.2rem;
-		background-color: #256af58a;
+		background-color: #e9e9e9;
 		border: 2px solid #121212df;
 	}
 	.copy-frame:last-child {
 		top: 0.8rem;
 		left: 1.2rem;
-		background-color: #32a5f1;
+		background-color: #ffffff;
 		border: 2px solid #121212dc;
 	}
 

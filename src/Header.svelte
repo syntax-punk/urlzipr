@@ -4,8 +4,8 @@
 
 <style>
 	.slit-banner {
-		height: 60rem;
-		width: 60rem;
+		height: 45rem;
+		width: 45rem;
 		background-image: url('/assets/slit_banner.png');
 		background-repeat: no-repeat;
 		background-size: cover;
@@ -13,22 +13,22 @@
 
 	@media (max-width: 1200px) {
 		.slit-banner {
-			height: 50rem;
-			width: 50rem;
+			height: 35rem;
+			width: 35rem;
 		}
 	}
 
 	@media (max-width: 900px) {
 		.slit-banner {
-			height: 40rem;
-			width: 40rem;
+			height: 25rem;
+			width: 25rem;
 		}
 	}
 
 	@media (max-width: 520px) {
 		.slit-banner {
-			height: 20rem;
-			width: 20rem;
+			height: 15rem;
+			width: 15rem;
 		}
 	}
 
