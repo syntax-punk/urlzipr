@@ -38,13 +38,13 @@
 	<Header />
 	<section>
 		<div class="text-banner">
-			Tired of long and confusing urls? Slit 'em!
+			Tired of long and confusing urls? <code>ZIP⚡️</code>'em!
 		</div>
 		<article>
 			<form on:submit|preventDefault={handleSubmit}>
 				<input class="basic-input" bind:value={urlInput}>
 				<button disabled={!validUrl || !urlInput } type=submit>
-					SLIT 🔪
+					ZIP⚡️
 				</button>
 			</form>
 			{#if shortUrl}

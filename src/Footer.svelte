@@ -1,15 +1,17 @@
 <footer>
-	<span>by <a href="https://twitter.com/theVoogie">@theVoogie 👀</a></span>
+	<span>made with ❤️ by <a href="https://syntaxpunk.com">@syntax-punk 👀</a></span>
 </footer>
 
 <style>
 	span {
 		font-weight: 300;	
 		font-size: 1.8rem;
-		color: #2B2D42;
+		color: #00bbf9;
 	}
 
 	a {
 		display: inline-block;
+		text-decoration: none;
+		color: #172635;
 	}
 </style>

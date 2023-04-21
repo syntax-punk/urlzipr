@@ -29,7 +29,7 @@ main {
 	padding: 2rem;
 	width: 100%;
 	color: #000000;
-	background-color: #ffffff;
+	background-color: #f2f2f2;
 	border: 24px solid #031627;
 }
 
@@ -48,6 +48,7 @@ section {
 	font-weight: 300;
 	letter-spacing: 0.1rem;
 	word-spacing: 0.2rem;
+	font-size: 2.4rem;
 	line-height: 3.8rem;
 }
 
@@ -121,9 +122,10 @@ input:disabled {
 }
 
 button {
-	color: #F5F7F9;
-	background-color: #031627;
-	border: 2px solid #4592AF;
+	color: #172635;
+	font-weight: 600;
+	background-color: #00bbf9;
+	border: 2px solid #050c48;
 	cursor: pointer;
 	outline: none;
 }
@@ -161,53 +163,4 @@ button:focus {
 }
 .spinner {
 	animation: 3s ease-in infinite reverse both running spin;
-}
-.waveWrapper {
-	overflow: hidden;
-	position: absolute;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	top: 0;
-}
-.bgTop {
-	z-index: 15;
-	opacity: 0.5;
-}
-.bgMiddle {
-	z-index: 10;
-	opacity: 0.75;
-}
-.bgBottom {
-	z-index: 5;
-}
-.wave {
-	position: absolute;
-	left: 0;
-	width: 200%;
-	height: 100%;
-	background-repeat: repeat no-repeat;
-	background-position: 0 bottom;
-	transform-origin: center bottom;
-}
-.waveTop {
-	background-size: 50% 100px;
-}
-.waveAnimation .waveTop {
-animation: move-wave 3s;
- -webkit-animation: move-wave 3s;
- -webkit-animation-delay: 1s;
- animation-delay: 1s;
-}
-.waveMiddle {
-	background-size: 50% 120px;
-}
-.waveAnimation .waveMiddle {
-	animation: move_wave 10s linear infinite;
-}
-.waveBottom {
-	background-size: 50% 100px;
-}
-.waveAnimation .waveBottom {
-	animation: move_wave 15s linear infinite;
 }

@@ -6,7 +6,7 @@
 	.slit-banner {
 		height: 45rem;
 		width: 45rem;
-		background-image: url('/assets/slit_banner.png');
+		background-image: url('/assets/urlzppr.png');
 		background-repeat: no-repeat;
 		background-size: cover;
 	}
