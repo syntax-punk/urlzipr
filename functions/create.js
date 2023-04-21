@@ -18,7 +18,7 @@ exports.handler = async function(event, ctx) {
       return {
         statusCode: 302,
         headers: {
-          'Location': 'https://slit.link'
+          'Location': 'https://urlzipr.com'
        }
       }
     } else {
