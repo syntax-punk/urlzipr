@@ -13,5 +13,5 @@
 
 [[redirects]]
     from = "/0/*"
-    to = "/.netlify/functions/redir/:splat"
+    to = "/.netlify/functions/redir/"
     status = 200
