@@ -1,4 +1,4 @@
-const { collection, addDoc } = require("firebase/firestore");
+const { collection, addDoc, serverTimestamp } = require("firebase/firestore");
 const { generateUrl } = require("./utils/randomize.js");
 const { db } = require("./utils/firebase.js");
 const validUrl = require('valid-url');
@@ -27,11 +27,10 @@ exports.handler = async function(event, ctx) {
       }
     }
 
-    const date = new Date();
-    const docRef = await addDoc(collection(db, DB_NAME), {
+    await addDoc(collection(db, DB_NAME), {
       link,
       hash,
-      created: date.toISOString()
+      created: serverTimestamp()
     });
 
     const body = {
