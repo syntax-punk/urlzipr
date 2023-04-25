@@ -7,12 +7,12 @@ function randomize (size, input = chars) {
     return result;
 };
 
-function generateUrl(hashLen = 4) {
+function generateUrl(hashLen = 5) {
     const hash = randomize(hashLen)
     const baseUrl = process.env.API_BASE_URL;
     return {
         hash,
-        url: `${baseUrl}r-${hash}`
+        url: `${baseUrl}${hash}`
     }
 }
 

@@ -9,9 +9,7 @@ exports.handler = async function(event, ctx) {
   console.log('---> event: ', event);
   console.log('---> ctx: ', ctx);
 
-  const pathParams = event.path.split('/');
-  const hashValue = pathParams.pop();
-  const hash = hash.replace('r-', '');
+  const { splat: hash } = event.pathParameters;
 
   try {
     const q = query(collection(db, DB_NAME), where("hash", "==", hash));
