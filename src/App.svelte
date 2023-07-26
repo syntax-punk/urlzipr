@@ -1,7 +1,7 @@
 <script>
 	import Header from './Header.svelte'
 	import Footer from './Footer.svelte'
-	import {clipIt, isValidUrl} from "./helpers" 
+	import {clipIt, isValidUrl, normalizeUrl} from "./helpers" 
 
 	let urlInput = "";
 	$: validUrl =  isValidUrl(urlInput);
@@ -11,8 +11,9 @@
 
 	const handleSubmit = () => {
 		if (!urlInput) return;
+		const normalizedUrl = normalizeUrl(urlInput);
 		const body = {
-			link: urlInput
+			link: normalizedUrl
 		}
 		const appUrl = `/.netlify/functions/create`
 		fetch(appUrl, {	
